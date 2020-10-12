@@ -12,10 +12,10 @@ describe 'Integration Specs' do
   subject(:checkout) { Checkout.new products: products }
 
   it 'Test a £20 discount on basket if price > £150' do
-    checkout.scan A
-    checkout.scan C
-    checkout.scan C
-    checkout.scan C
+    checkout.scan 'A'
+    checkout.scan 'C'
+    checkout.scan 'C'
+    checkout.scan 'C'
 
     expect(checkout.total).to eq '£160'
   end
