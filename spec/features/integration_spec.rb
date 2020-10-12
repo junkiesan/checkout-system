@@ -2,12 +2,12 @@ require_relative '../../lib/checkout'
 
 describe 'Integration Specs' do
   let(:products) do
-    {
-      A => Item.new('A', 30),
-      B => Item.new('B', 20),
-      C => Item.new('C', 50),
-      D => Item.new('D', 15)
-    }
+    [
+      Item.new(name: 'A', price: 30),
+      Item.new(name: 'B', price: 20),
+      Item.new(name: 'C', price: 50),
+      Item.new(name: 'D', price: 15)
+    ]
   end
   subject(:checkout) { Checkout.new products: products }
 
