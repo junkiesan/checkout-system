@@ -19,4 +19,4 @@ describe 'Integration Specs' do
 
     expect(checkout.total).to eq '£160'
   end
-end
+end 
