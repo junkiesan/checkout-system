@@ -1,5 +1,5 @@
 class Checkout
-  def initialize(products: nil)
+  def initialize(products: nil, basket: Basket)
     @products = products
     @order    = Hash.new(0)
   end
@@ -15,7 +15,6 @@ class Checkout
   private
 
   attr_reader :products, 
-              :cost,
               :order
 
   def item_in_products?(item)
