@@ -1,6 +1,7 @@
 class Checkout
   def initialize(products: nil, basket: Basket)
     @products = products
+    @basket   = basket
     @order    = Hash.new(0)
   end
 
@@ -10,12 +11,17 @@ class Checkout
   end
 
   def total
-    #need basket
+    '£%.2f' % order_cost_in_pounds
   end
   private
 
-  attr_reader :products, 
+  attr_reader :products,
+              :basket,
               :order
+
+  def order_cost_in_pounds
+    basket.total_basket(products, order) / 100
+  end
 
   def item_in_products?(item)
     # Refacto need to check : products.map(&product.name).include?(item)
