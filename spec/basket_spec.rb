@@ -10,13 +10,13 @@ describe Basket do
   describe '#total' do
     it 'is expected to calculate the cost of a basket' do
       order = { "A" => 1, "A" => 1 }
-      expect(basket.total_basket(order)).to eq 50
+      expect(basket.total(order)).to eq 50
     end
 
     it 'is expected to apply a discount' do
       # allow().to receive().and_return
       order = { "A" => 3 }
-      expect(basket.total_basket(order)).to eq
+      expect(basket.total(order)).to eq 70
     end
   end
 end

@@ -8,7 +8,7 @@ describe Checkout do
 
   describe '#scan' do
     it 'is expected to raise an error if item name is not in products' do
-      expect { checkout.scan('B') }.to raise_error 'B is not a valid item name'
+      expect { checkout.scan('A') }.to raise_error 'A is not a valid item name'
     end
   end
 
@@ -18,7 +18,7 @@ describe Checkout do
       checkout.scan('A')
 
       allow(basket).to receive(:total_basket)
-        .with(products, {'A' => 2}).and_return(60)
+        .with(products, { 'A' => 2 }).and_return(60)
 
       expect(checkout.total).to eq '£60'
     end

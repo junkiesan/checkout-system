@@ -1,9 +1,9 @@
 class Basket
-  def initialize(products)
+  def initialize(products: nil)
     @products_prices = products_with_prices(products)
   end
 
-  def total_basket(order)
+  def self.total(order)
     order.reduce(0) do |sum, (item, num)|
       sum += cost(item, products) * num
     end
