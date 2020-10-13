@@ -1,14 +1,14 @@
 require_relative '../lib/checkout'
 
 describe Checkout do
-  let(:basket) { double :basket }
+  let(:basket) { double :Basket }
   let(:item) { double :Item, name: 'A' }
   let(:products) { [item] }
   subject(:checkout) { described_class.new(products: products, basket: basket) }
 
   describe '#scan' do
     it 'is expected to raise an error if item name is not in products' do
-      expect{ checkout.scan('A') }.to raise_error 'A is not a valid item name'
+      expect { checkout.scan('B') }.to raise_error 'B is not a valid item name'
     end
   end
 
