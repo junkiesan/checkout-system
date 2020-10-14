@@ -1,9 +1,9 @@
 require_relative '../../lib/discounts/percent_discount'
 
 describe PercentDiscount do
-  subject(:percent_discount) { described_class.new(percent_discount, treshold) }
-  let(:percent_discount) { 15 }
-  let(:treshold) { 1000 }
+  subject(:percent_discount) { described_class.new(:percent, :treshold) }
+  # let(:percent) { 15 }
+  # let(:treshold) { 1000 }
 
   describe '#apply' do
     it 'is expected to apply a percent discount' do
