@@ -1,6 +1,6 @@
 class ItemDiscount
 
-  def initialize(item, item_number, discount)
+  def initialize(item:, item_number:, discount:)
     @item        = item
     @item_number = item_number
     @discount    = discount

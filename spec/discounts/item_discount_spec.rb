@@ -1,10 +1,10 @@
 require_relative '../../lib/discounts/item_discount'
 
 describe ItemDiscount do
-  subject(:item_discount) { described_class.new(item, item_number, discount) }
-  let(:item) { "A" }
-  let(:item_number) { 3 }
-  let(:discount) { 20 }
+  subject(:item_discount) { described_class.new(item: "A", item_number: 3, discount: 20) }
+  # let(:item) { "A" }
+  # let(:item_number) { 3 }
+  # let(:discount) { 20 }
 
   describe '#apply' do
     it 'is expected to apply discount on orders with three or more A items' do
